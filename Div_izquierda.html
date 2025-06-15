@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div a la Izquierda</title>
+    <style>
+        /* Aquí comienza el código CSS */
+        body {
+            display: flex; /* Usamos flexbox para el body para controlar la disposición */
+            justify-content: flex-start; /* Alinea los elementos hijos al inicio (izquierda) */
+            align-items: stretch; /* Estira los elementos hijos para que ocupen toda la altura disponible */
+            min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+            margin: 0; /* Elimina el margen predeterminado del body */
+            background-color: #f0f0f0; /* Color de fondo para visualizar mejor */
+            font-family: Arial, sans-serif; /* Fuente básica para el texto */
+        }
+
+        .ladoiz {
+            width: 300px; /* Ancho fijo para el div, puedes ajustar este valor */
+            min-height: 100vh; /* Asegura que el div ocupe al menos el 100% de la altura de la ventana */
+            border: 2px solid black; /* Borde para que sea visible, como en tu imagen */
+            background-color: white; /* Color de fondo para el div */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+            padding: 20px; /* Espacio interno para el contenido */
+            box-sizing: border-box; /* Asegura que el padding y border no aumenten el tamaño total */
+
+            display: flex; /* Para centrar el contenido interno verticalmente si es necesario */
+            align-items: center; /* Centra el contenido interno verticalmente */
+            justify-content: center; /* Centra el contenido interno horizontalmente */
+            text-align: center; /* Por si el contenido es texto simple */
+        }
+
+        .ladoiz p {
+            margin: 0; /* Elimina el margen predeterminado del párrafo */
+            font-size: 1.2em; /* Tamaño de fuente para el texto */
+            color: #333;
+        }
+        /* Aquí termina el código CSS */
+    </style>
+</head>
+<body>
+    <div class="ladoiz">
+        <p>Div class: ladoiz</p>
+    </div>
+</body>
+</html>
