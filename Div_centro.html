@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrar Div en una sola pagina</title>
+    <style>
+        /* Aquí comienza el código CSS */
+        body {
+            display: flex; /* Convierte el body en un contenedor flex */
+            justify-content: center; /* Centra los elementos hijos horizontalmente */
+            align-items: center; /* Centra los elementos hijos verticalmente */
+            min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+            margin: 0; /* Elimina el margen predeterminado del body */
+            background-color: #f0f0f0; /* Color de fondo para visualizar mejor */
+            font-family: Arial, sans-serif; /* Fuente básica para el texto */
+        }
+
+        .centrado {
+            width: 300px; /* Ancho fijo para el div centrado, puedes ajustar este valor */
+            height: 300px; /* Alto fijo para el div centrado, puedes ajustar este valor */
+            border: 2px solid black; /* Borde para que sea visible, como en tu imagen */
+            display: flex; /* Usamos flexbox también para el contenido interno si lo necesitamos centrar */
+            justify-content: center; /* Centra el contenido interno horizontalmente */
+            align-items: center; /* Centra el contenido interno verticalmente */
+            text-align: center; /* Por si el contenido es texto simple */
+            background-color: white; /* Color de fondo para el div */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+            padding: 20px; /* Espacio interno para el contenido */
+            box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del div */
+        }
+
+        .centrado p {
+            margin: 0; /* Elimina el margen predeterminado del párrafo dentro del div */
+            font-size: 1.2em; /* Tamaño de fuente para el texto */
+            color: #333;
+        }
+        /* Aquí termina el código CSS */
+    </style>
+</head>
+<body>
+    <div class="centrado">
+        <p>Div class: centrado</p>
+    </div>
+</body>
+</html>
