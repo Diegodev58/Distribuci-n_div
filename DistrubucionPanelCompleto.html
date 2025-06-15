@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de Panel de Control Responsivo</title>
+    <style>
+        /* Aquí comienza el código CSS */
+
+        /* --- Estilos Generales y para Pantallas Grandes (Desktop First) --- */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid; /* El body es el contenedor principal de Grid */
+            grid-template-columns: 250px 1fr; /* Columna izquierda (BarraIzquierdo), Columna derecha (PanelDatos/DivVision) */
+            grid-template-rows: auto auto 1fr; /* Fila superior (BarraA), Fila media (PanelDatos), Fila inferior (DivVision) */
+            grid-template-areas:
+                "header header"  /* BarraA ocupa toda la primera fila */
+                "sidebar panel"  /* BarraIzquierdo y PanelDatos en la segunda fila */
+                "sidebar main";  /* BarraIzquierdo y DivVision en la tercera fila */
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Color de fondo general */
+            overflow-x: hidden; /* Evita scroll horizontal no deseado */
+        }
+
+        /* Estilos generales para todos los divs de barra/sección */
+        .div-seccion {
+            border: 2px solid black; /* Borde como en tu imagen */
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Estilos específicos para cada barra/panel */
+        .BarraA {
+            grid-area: header; /* Asignado al área 'header' */
+            background-color: #888;
+            color: white;
+            height: 80px; /* Altura fija */
+        }
+
+        .BarraIzquierdo {
+            grid-area: sidebar; /* Asignado al área 'sidebar' */
+            background-color: #ccc;
+        }
+
+        .PanelDatos {
+            grid-area: panel; /* Asignado al área 'panel' */
+            background-color: #a0a0a0; /* Un gris intermedio */
+            color: white;
+            height: 100px; /* Altura fija para el panel de datos */
+        }
+
+        .DivVision {
+            grid-area: main; /* Asignado al área 'main' */
+            background-color: white;
+        }
+
+        /* --- Media Query para Pantallas Pequeñas (Mobile First) --- */
+        @media (max-width: 768px) { /* Cuando el ancho de la pantalla sea de 768px o menos */
+            body {
+                grid-template-columns: 1fr; /* Una sola columna para todos */
+                grid-template-rows: auto auto auto 1fr; /* 4 filas: BarraA, BarraIzquierdo, PanelDatos, DivVision */
+                grid-template-areas:
+                    "header"  /* BarraA arriba */
+                    "sidebar" /* BarraIzquierdo debajo */
+                    "panel"   /* PanelDatos debajo */
+                    "main";   /* DivVision al final */
+            }
+
+            .BarraA {
+                height: auto; /* Altura automática en móvil */
+                padding: 15px;
+            }
+
+            .BarraIzquierdo {
+                min-height: auto; /* Ya no se estira a la altura total */
+                height: 150px; /* Altura fija o auto para móvil */
+                padding: 15px;
+            }
+
+            .PanelDatos {
+                height: auto; /* Altura automática en móvil */
+                padding: 15px;
+            }
+
+            .DivVision {
+                padding: 15px; /* Ajustar padding para pantallas pequeñas */
+            }
+        }
+        /* Aquí termina el código CSS */
+    </style>
+</head>
+<body>
+    <div class="div-seccion BarraA">
+        <p>Div barra Class: BarraA</p>
+    </div>
+    <div class="div-seccion BarraIzquierdo">
+        <p>Div barra<br>Class: BarraIzquierdo</p>
+    </div>
+    <div class="div-seccion PanelDatos">
+        <p>Div barra Class: PanelDatos</p>
+    </div>
+    <div class="div-seccion DivVision">
+        <p>Div barra Class: DivVision</p>
+    </div>
+</body>
+</html>
